@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TODO:
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[a4paper, 12pt]{article}
 
@@ -9,70 +9,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[utf8x]{inputenc}
 \usepackage{wallpaper}
-% \usepackage{tocbibind}              %includes all info in toc (list of figures,
-%                                     %list of tables etc.)
-% \usepackage{tocloft}
 \usepackage{setspace}               %needed for line spacing
-% \usepackage[pdftex]{graphicx}
-% \usepackage{subfig}
-% \usepackage{epstopdf}
-% \usepackage[noprefix, intoc]{nomencl}
-% \usepackage{ifthen}
-% \usepackage{amsmath}
-% \usepackage{amsfonts}
-% \usepackage{ushort}
-% \usepackage[usenames, dvipsnames]{xcolor}
-% \usepackage{mdframed}
-% \usepackage{tikz}
 \usepackage{fancyhdr}
 \usepackage{fullpage}
-% \usepackage{booktabs}
-% \usepackage{longtable}
-% \usepackage{array}
-% \usepackage{calc}
-% \usepackage[square, comma, numbers, sort&compress]{natbib}
-% \usepackage[resetlabels]{multibib}
-% \usepackage{notoccite}
 \usepackage[stable]{footmisc}
-% \usepackage{soul}
-% \usepackage{minted}
 \usepackage[hyphens]{url}
 \usepackage[hyperindex = true,               %
             pdfstartview = {FitV},           %
             pdftitle = {MPR213 Studyguide},  %
-            pdfauthor = {Logan Page},        %
+            pdfauthor = {Mr. L G Page},      %
             colorlinks = true,               %
             pagebackref = true,              %
             citecolor = blue,                %
             plainpages = false,              %
             pdfpagelabels]{hyperref}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                         Document Settings                               %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \renewcommand{\cftchapfont}{\bfseries}
-% \renewcommand{\cftchappagefont}{\bfseries}
-% \renewcommand{\cftchapaftersnum}{:}
-% \renewcommand{\cftchapnumwidth}{7em}
-% \makeatletter
-% \newcommand*\updatechaptername{%
-%    \addtocontents{toc}{\protect\renewcommand*\protect\cftchappresnum{\@chapapp\ }}
-% }
-% \makeatother
-% \renewcommand{\cftfigaftersnum}{:}
-% \renewcommand{\cftfignumwidth}{6em}
-% \renewcommand{\cftfigpresnum}{Figure }
-%
-% \renewcommand{\cfttabaftersnum}{:}
-% \renewcommand{\cfttabnumwidth}{5.5em}
-% \renewcommand{\cfttabpresnum}{Table }
-%
-% \renewcommand{\contentsname}{Table of contents}
-% \sethlcolor{white}
-% \makeatletter
-% \g@addto@macro\@floatboxreset\centering
-% \makeatother
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -176,19 +126,16 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%                         Frontmatter                                  %%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     \onehalfspacing
     \pagenumbering{roman}
     \include{Body/Title}
     \tableofcontents
-    %\newpage
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%                         Main Body                                    %%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \renewcommand{\thepage}{\arabic{page}}
-    %\updatechaptername
     \include{Body/Educational_Approach}
-%     \include{Body/Module_Objectives}
+    %\include{Body/Module_Objectives}
     \include{Body/Lecturer_Contact}
     \include{Body/Study_Material}
     \include{Body/Learning_Activity}
