@@ -1,146 +1,230 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TODO:
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass[a4paper, 12pt]{article}
+\RequirePackage[l2tabu, orthodox]{nag}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                         Packages                                        %%%
+%%%                                Packages                                 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[utf8x]{inputenc}
-\usepackage{wallpaper}
-\usepackage{setspace}               %needed for line spacing
-\usepackage{fancyhdr}
-\usepackage{fullpage}
-\usepackage{longtable}
-\usepackage[stable]{footmisc}
-\usepackage[hyphens]{url}
-\usepackage[hyperindex = true,               %
-            pdfstartview = {FitV},           %
-            pdftitle = {MPR213 Studyguide},  %
-            pdfauthor = {Mr. L G Page},      %
-            colorlinks = true,               %
-            pagebackref = true,              %
-            citecolor = blue,                %
-            plainpages = false,              %
-            pdfpagelabels]{hyperref}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                         Page Style                                      %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%LEFT SIDE
-\setlength{\marginparwidth}{0pt}
-\setlength{\marginparsep}{0pt}
-\setlength{\oddsidemargin}{0.5cm}
-\setlength{\evensidemargin}{0.5cm}
-%TOP OF PAGE
-\setlength{\topmargin}{0.0cm}
-\setlength{\headheight}{0.7cm}
-\setlength{\headsep}{1cm}
-%BODY TEXT
-\setlength{\textwidth}{15.5cm} %14.8cm
-\setlength{\textheight}{22.5cm}
-\setlength{\parskip}{0.5cm}
-\setlength{\footskip}{1cm}
-
-%\allsectionsfont{\raggedright}          %stops headings being split
-\setcounter{secnumdepth}{3}              %subsubsections are numbered
-\setcounter{tocdepth}{3}                 %subsubsections are added to the TOC
-
+    \usepackage[utf8x]{inputenc}
+    \usepackage{wallpaper}
+    \usepackage{setspace}               %needed for line spacing
+    \usepackage{fancyhdr}
+    \usepackage{minted}
+    \usepackage[framemethod=TikZ]{mdframed}
+    \usepackage{fullpage}
+    \usepackage{longtable}
+    \usepackage[stable]{footmisc}
+    \usepackage[hyphens]{url}
+    \usepackage[hyperindex = true,               %
+                pdfstartview = {FitV},           %
+                pdftitle = {MPR213 Studyguide},  %
+                pdfauthor = {Mr. L G Page},      %
+                colorlinks = true,               %
+                pagebackref = true,              %
+                citecolor = blue,                %
+                plainpages = false,              %
+                pdfpagelabels]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                         Fancy header / footer                           %%%
+%%%                                Page Style                               %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagestyle{fancy}
-\renewcommand{\sectionmark}[1]{\markboth{\thesection.\ #1}{}}
-\fancyhf{}
-\fancyhead[L]{\textbf{\nouppercase\leftmark}}
-\fancyhead[R]{\textbf{\thepage}}
-\fancyfoot[L]{\copyright\  University of Pretoria, Faculty of
-              Engineering, Built Environment \& IT}
-\fancyfoot[R]{\thepage}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0.5pt}
-\fancypagestyle{plain}{\fancyhead{}
-                       \fancyfoot{}
-                       \renewcommand{\headrulewidth}{0pt}}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                        Code Highlighting                                %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \newminted{pycon}{linenos = True,                %
-%                   xleftmargin = 0.05\linewidth,  %
-%                   xrightmargin = 0.02\linewidth}
-% \newminted{python}{linenos = True,               %
-%                    xleftmargin = 0.05\linewidth, %
-%                    xrightmargin = 0.02\linewidth}
-% \renewcommand{\theFancyVerbLine}{\sffamily
-%     \textcolor[rgb]{0.5, 0.5, 1.0}{\scriptsize
-%         \oldstylenums{\arabic{FancyVerbLine}}}}
-
+    \setcounter{secnumdepth}{3}              %subsubsections are numbered
+    \setcounter{tocdepth}{3}                 %subsubsections are added to the TOC
+    %LEFT SIDE
+        \setlength{\marginparwidth}{0pt}
+        \setlength{\marginparsep}{0pt}
+        \setlength{\oddsidemargin}{0.5cm}
+        \setlength{\evensidemargin}{0.5cm}
+    %TOP OF PAGE
+        \setlength{\topmargin}{0.0cm}
+        \setlength{\headheight}{0.7cm}
+        \setlength{\headsep}{1cm}
+    %BODY TEXT
+        \setlength{\textwidth}{15.5cm} %14.8cm
+        \setlength{\textheight}{22.5cm}
+        \setlength{\parskip}{0.5cm}
+        \setlength{\footskip}{1cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                                   Frames                                %%%
+%%%                            Fancy header / footer                        %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \mdfdefinestyle{cautionstyle}{                        %
-%                 linecolor = red,                      %
-%                 linewidth = 1.5pt,                    %
-%                 frametitlerule = true,                %
-%                 frametitlebackgroundcolor = gray!20,  %
-%                 innertopmargin = \topskip             %
-%                 }
-%
-% \mdfdefinestyle{infostyle}{                           %
-%                 linecolor = yellow,                   %
-%                 linewidth = 1.5pt,                    %
-%                 frametitlerule = true,                %
-%                 frametitlebackgroundcolor = gray!20,  %
-%                 innertopmargin = \topskip             %
-%                 }
-%
-% \newmdenv[style = cautionstyle, %
-%           frametitle = {\includegraphics[width=0.5cm]{Figures/Caution.png} %
-%                         \: \: Take Note:},%
-%           ]{caution}
-%
-% \newmdenv[style = infostyle, %
-%           frametitle = {\includegraphics[width=0.7cm]{Figures/bookwebsite.jpg} %
-%                         \: \: More Info:},%
-%           ]{moreinfo}
+    \pagestyle{fancy}
+    \renewcommand{\sectionmark}[1]{\markboth{\thesection.\ #1}{}}
+    \fancyhf{}
+    \fancyhead[L]{\textbf{\nouppercase\leftmark}}
+    \fancyhead[R]{\textbf{\thepage}}
+    \fancyfoot[L]{\copyright\  University of Pretoria, Faculty of
+                  Engineering, Built Environment \& IT}
+    \fancyfoot[R]{\thepage}
+    \renewcommand{\headrulewidth}{0.5pt}
+    \renewcommand{\footrulewidth}{0.5pt}
+    \fancypagestyle{plain}{\fancyhead{}
+                           \fancyfoot{}
+                           \renewcommand{\headrulewidth}{0pt}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                              Code Highlighting                          %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % IPython Code Snippets
+    \newminted[ipythoncode]{pycon}{linenos=false, %
+        frame=single,                %
+        framesep=0.8em,              %
+        xleftmargin=0.04\linewidth,  %
+        xrightmargin=0.01\linewidth, %
+        label={Code Snippet - IPython Console}}
+
+    % Python Code Snippets
+    \newminted[pysnippet]{python}{linenos=true, %
+        frame=single,                %
+        framesep=0.8em,              %
+        numbersep=6pt,               %
+        xleftmargin=0.05\linewidth,  %
+        xrightmargin=0.02\linewidth, %
+        label={Code Snippet - Python}}
+
+    % Python Console Output
+    \newminted[consoleout]{pycon}{linenos=false, %
+        xleftmargin=0.00\linewidth,  %
+        xrightmargin=0.02\linewidth}
+
+    % Python Program
+    \newminted[pythonprog]{python}{linenos=true, %
+        frame=leftline,
+        framesep=0.8em,              %
+        numbersep=6pt,               %
+        xleftmargin=0.00\linewidth,  %
+        xrightmargin=0.02\linewidth}
+
+    % Python Program Output
+    \newminted[pyprogout]{pycon}{linenos=false, %
+        xleftmargin=-0.04\linewidth,  %
+        xrightmargin=0.02\linewidth}
+
+    \renewcommand{\theFancyVerbLine}{%
+        \textcolor[rgb]{0.5, 0.5, 1.0}{%
+        \oldstylenums{\arabic{FancyVerbLine}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                                  Frames                                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \usetikzlibrary{calc}
+
+    \definecolor{warningColor}{named}{Red3}
+    \definecolor{infoColor}{named}{YellowGreen}
+    \definecolor{programColor}{named}{Gray}
+
+    \tikzset{warningsymbol/.style={
+                rectangle,
+                draw=warningColor,
+                fill=white,
+                scale=1.0,
+                overlay}
+             }
+
+    \tikzset{infosymbol/.style={
+                rectangle,
+                draw=infoColor,
+                fill=white,
+                scale=1.3,
+                overlay}
+             }
+
+    \tikzset{progsymbol/.style={
+                rectangle,
+                draw=programColor,
+                fill=white,
+                scale=1.0,
+                overlay}
+             }
+
+    \mdfdefinestyle{warningstyle}{hidealllines=true, %
+            leftline=true,                      %
+            innertopmargin=0.8em,               %
+            innerbottommargin=0.4em,            %
+            innerleftmargin=1.7em,              %
+            middlelinewidth=0.2em,              %
+            linecolor=warningColor,             %
+            frametitlerule=true,                %
+            frametitlerulewidth=0.1em           %
+            firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[warningsymbol] {\danger};},%
+            secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[warningsymbol] {\danger};},%
+            middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[warningsymbol] {\danger};},%
+            singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[warningsymbol] {\danger};},%
+            }
+
+    \mdfdefinestyle{infostyle}{hidealllines=true, %
+            leftline=true,                   %
+            innertopmargin=0.8em,            %
+            innerbottommargin=0.4em,         %
+            innerleftmargin=1.7em,           %
+            middlelinewidth=0.2em,           %
+            linecolor=infoColor,             %
+            frametitlerule=true,             %
+            frametitlerulewidth=0.1em        %
+            firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[infosymbol] {\aldine};},%
+            secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[infosymbol] {\aldine};},%
+            middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[infosymbol] {\aldine};},%
+            singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[infosymbol] {\aldine};},%
+            }
+
+    \mdfdefinestyle{programstyle}{hidealllines=true, %
+            leftline=true,                   %
+            topline=true,                    %
+            frametitlerule=true,             %
+            subtitlebelowline=true,          %
+            linecolor=programColor,          %
+            middlelinewidth=0.2em,           %
+            innertopmargin=0.8em,            %
+            innerbottommargin=0.4em,         %
+            innerleftmargin=2.7em,           %
+            frametitlerulewidth=0.1em        %
+            subtitlebelowlinewidth=0.1em,    %
+            frametitlebackgroundcolor=programColor!20, %
+            subtitlebackgroundcolor=programColor!20,   %
+            }
+
+    \newmdenv[style=warningstyle, frametitle={Take Note:}]{caution}
+    \newmdenv[style=infostyle, frametitle={More Info:}]{moreinfo}
+    \newmdenv[style=programstyle]{pyprogframe}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                                   Other                                 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
-\renewcommand{\UrlBreaks}{\do\/\do=\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h%
-                          \do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s%
-                          \do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C%
-                          \do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M%
-                          \do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W%
-                          \do\X\do\Y\do\Z\do\i\do&}
+    \renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h%
+                              \do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q%
+                              \do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z%
+                              \do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I%
+                              \do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R%
+                              \do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}
 
+    \newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
 
 \begin{document}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %%%                         Frontmatter                                  %%%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \pagenumbering{roman}
-    \include{Body/Title}
-    \tableofcontents
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%                             Frontmatter                             %%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \pagenumbering{roman}
+        \include{Body/Title}
+        \tableofcontents
 
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %%%                         Main Body                                    %%%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \renewcommand{\thepage}{\arabic{page}}
-    \include{Body/Educational_Approach}
-    %\include{Body/Module_Objectives}
-    \include{Body/Lecturer_Contact}
-    \include{Body/Study_Material}
-    \include{Body/Learning_Activity}
-    \include{Body/Assesment_Rules}
-    \include{Body/Study_Components}
-    \include{Body/Group_Project}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%                               Main Body                             %%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \renewcommand{\thepage}{\arabic{page}}
+        \include{Body/Educational_Approach}
+        %\include{Body/Module_Objectives}
+        \include{Body/Lecturer_Contact}
+        \include{Body/Study_Material}
+        \include{Body/Learning_Activity}
+        \include{Body/Assesment_Rules}
+        \include{Body/Study_Components}
+        \include{Body/Group_Project}
+        \include{Body/Lecture_Notes/Body/simple_calculator}
 \end{document}
