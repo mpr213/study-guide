@@ -1,0 +1,3 @@
+[submodule "Lecture_Notes"]
+	path = Lecture_Notes
+	url = git@mecheng.up.ac.za:mpr213/lectures.git
