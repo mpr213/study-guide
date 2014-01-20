@@ -7,12 +7,17 @@
     \usepackage[utf8x]{inputenc}
     \usepackage{wallpaper}
     \usepackage{setspace}               %needed for line spacing
+    \usepackage[envcountsect]{beamerarticle}
     \usepackage{fancyhdr}
     \usepackage{minted}
-    \usepackage[framemethod=TikZ]{mdframed}
     \usepackage{fullpage}
+    \usepackage{float}
+    \usepackage{graphicx}
+    \usepackage{caption}
+    \usepackage{subcaption}
     \usepackage{longtable}
     \usepackage[stable]{footmisc}
+    \usepackage[update, prepend]{epstopdf}
     \usepackage[hyphens]{url}
     \usepackage[hyperindex = true,               %
                 pdfstartview = {FitV},           %
@@ -27,8 +32,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                                Page Style                               %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \setcounter{secnumdepth}{3}              %subsubsections are numbered
-    \setcounter{tocdepth}{3}                 %subsubsections are added to the TOC
+    \graphicspath{{Figures/}{Figures_Lectures/}}
+    \DeclareGraphicsExtensions{.pdf, .png, .jpg, .eps}
+    \setcounter{secnumdepth}{3}
+    \setcounter{tocdepth}{3}
     %LEFT SIDE
         \setlength{\marginparwidth}{0pt}
         \setlength{\marginparsep}{0pt}
@@ -88,10 +95,10 @@
 
     % Python Program
     \newminted[pythonprog]{python}{linenos=true, %
-        frame=leftline,
+        frame=single,
         framesep=0.8em,              %
         numbersep=6pt,               %
-        xleftmargin=0.00\linewidth,  %
+        xleftmargin=0.05\linewidth,  %
         xrightmargin=0.02\linewidth}
 
     % Python Program Output
@@ -104,99 +111,9 @@
         \oldstylenums{\arabic{FancyVerbLine}}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                                  Frames                                 %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \usetikzlibrary{calc}
-
-    \definecolor{warningColor}{named}{Red3}
-    \definecolor{infoColor}{named}{YellowGreen}
-    \definecolor{programColor}{named}{Gray}
-
-    \tikzset{warningsymbol/.style={
-                rectangle,
-                draw=warningColor,
-                fill=white,
-                scale=1.0,
-                overlay}
-             }
-
-    \tikzset{infosymbol/.style={
-                rectangle,
-                draw=infoColor,
-                fill=white,
-                scale=1.3,
-                overlay}
-             }
-
-    \tikzset{progsymbol/.style={
-                rectangle,
-                draw=programColor,
-                fill=white,
-                scale=1.0,
-                overlay}
-             }
-
-    \mdfdefinestyle{warningstyle}{hidealllines=true, %
-            leftline=true,                      %
-            innertopmargin=0.8em,               %
-            innerbottommargin=0.4em,            %
-            innerleftmargin=1.7em,              %
-            middlelinewidth=0.2em,              %
-            linecolor=warningColor,             %
-            frametitlerule=true,                %
-            frametitlerulewidth=0.1em           %
-            firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[warningsymbol] {\danger};},%
-            secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[warningsymbol] {\danger};},%
-            middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[warningsymbol] {\danger};},%
-            singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[warningsymbol] {\danger};},%
-            }
-
-    \mdfdefinestyle{infostyle}{hidealllines=true, %
-            leftline=true,                   %
-            innertopmargin=0.8em,            %
-            innerbottommargin=0.4em,         %
-            innerleftmargin=1.7em,           %
-            middlelinewidth=0.2em,           %
-            linecolor=infoColor,             %
-            frametitlerule=true,             %
-            frametitlerulewidth=0.1em        %
-            firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[infosymbol] {\aldine};},%
-            secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[infosymbol] {\aldine};},%
-            middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[infosymbol] {\aldine};},%
-            singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[infosymbol] {\aldine};},%
-            }
-
-    \mdfdefinestyle{programstyle}{hidealllines=true, %
-            leftline=true,                   %
-            topline=true,                    %
-            frametitlerule=true,             %
-            subtitlebelowline=true,          %
-            linecolor=programColor,          %
-            middlelinewidth=0.2em,           %
-            innertopmargin=0.8em,            %
-            innerbottommargin=0.4em,         %
-            innerleftmargin=2.7em,           %
-            frametitlerulewidth=0.1em        %
-            subtitlebelowlinewidth=0.1em,    %
-            frametitlebackgroundcolor=programColor!20, %
-            subtitlebackgroundcolor=programColor!20,   %
-            }
-
-    \newmdenv[style=warningstyle, frametitle={Take Note:}]{caution}
-    \newmdenv[style=infostyle, frametitle={More Info:}]{moreinfo}
-    \newmdenv[style=programstyle]{pyprogframe}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                                   Other                                 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \setjobnamebeamerversion{geometry.beamer}
     \renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h%
                               \do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q%
                               \do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z%
@@ -219,12 +136,11 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \renewcommand{\thepage}{\arabic{page}}
         \include{Body/Educational_Approach}
-        %\include{Body/Module_Objectives}
         \include{Body/Lecturer_Contact}
         \include{Body/Study_Material}
         \include{Body/Learning_Activity}
         \include{Body/Assesment_Rules}
         \include{Body/Study_Components}
         \include{Body/Group_Project}
-        \include{Body/Lecture_Notes/Body/simple_calculator}
+        \include{Body_Lectures/simple_calculator}
 \end{document}
