@@ -6,5 +6,6 @@
 *.bbl
 *.blg
 *.swp
+*.swo
 *.backup
 *~
