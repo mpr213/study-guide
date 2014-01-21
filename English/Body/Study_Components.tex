@@ -1,17 +1,19 @@
 \section{Study Components}
     \subsection{Purpose of the module}
-        {\bf Advanced spreadsheet applications:} \\
-        Named ranges, linear algebra,
-        solution of systems of equations, regression, interpolation,
-        optimization and table manipulation. \\ \\
-        {\bf Basic structured programming:} \\
-        Looping, branching, subroutines, iteration, reading and writing data
-        files. Development, coding and debugging of simple programs in a high
-        level programming language. Programming principles are illustrated via
-        mathematical concepts such as limits, differentiation, integration
-        and linear algebra. Structured programming by making use of functions
-        and available packages. Basic graphical output (plotting) is also
-        covered.
+    {\bf Advanced spreadsheet applications:} \\
+    Named ranges, referencing, linear programming, solving non-linear
+    equations, fitting regression lines, interpolation, manipulating
+    large data sets, extracting information from data sets. \\ \\
+    {\bf Basic structured programming:} \\
+    Data container types, Looping, branching, subroutines, iteration,
+    reading and writing data files. Development, coding and debugging
+    of simple programs in a high level programming
+    language. Programming principles are illustrated via mathematical
+    and physics concepts such as limits, differentiation, integration,
+    linear algebra and simple motion. Structured programming by coding
+    and using functions you wrote yourself as well as using functions
+    available in packages. Basic graphical output (plotting) is also
+    covered.
 
     \subsection{Module Structure}
         The structure of this module is shown in table \ref{tab:study_comp}.
@@ -74,15 +76,15 @@
                 & \qquad Graph Annotation                    &    &    \\
                 & \qquad 3D Graphs                           &    &    \\
              \hline
-             8  & Data Handling                              &  6 & 2  \\
+             8  & Data Handling                              &  12& 3  \\
                 & \qquad Reading and Writing Data            &    &    \\
                 & \qquad Data Sharing between Application    &    &    \\
              \hline
-             9  & High Level Programming                     &  6 & 2  \\
+             9  & High Level Programming                     &  10& 3  \\
                 & \qquad Additional Modules                  &    &    \\
-                & \qquad Advanced Build-In Functions         &    &    \\
+                & \qquad Advanced Built-In Functions         &    &    \\
              \hline
-             10 & Graphical User Interfaces (GUI's)          & 16 & 4  \\
+             10 & Graphical User Interfaces (GUI's)          &  6 & 2  \\
                 & \qquad TKinter Module                      &    &    \\
                 & \qquad Forms and Form Objects              &    &    \\
                 & \qquad Mouse / Keyboard Events             &    &    \\
@@ -135,7 +137,7 @@
                  10 & 2     & 22 -- 25 Apr     & 11    & T9 \\
                     &       & == TESTWEEK 2 == &       & \\
                  11 & 4     & 12 -- 16 May     & 8, 9  & T10 \\
-                 12 & 4     & 19 -- 23 May     & 10    & T11 \\
+                 12 & 4     & 19 -- 23 May     & 9, 10 & T11 \\
                  13 & 4     & 26 -- 29 May     & Recap & T12 \\
                     &       & ===== EXAM ===== &       & \\
                  \hline
@@ -157,7 +159,7 @@
         Selected exercise problems, from the study notes, will be covered during
         the tutorial sessions. The selected chapters and problems (from the study
         notes) that will be covered in each tutorial session will be added to
-        Click-UP.
+        {\it ClickUP}.
 
     \subsection{Fundamental Concepts}
         The following concepts need to be mastered in order to pass the course.
@@ -178,90 +180,125 @@
             \item Functions (able to properly create a new function, understand
                 how objects are parsed to and from functions, be able to
                 properly use any created function)
+            \item File reading and writing of {\it CSV} files
             \item Plotting (be able to create a simple 2D plot with proper
                 annotations)
+            \item Data processing using spreadsheets
         \end{itemize}
 
     \subsection{Study Theme Descriptions}
         \subsubsection{Theme 1: Introduction to Computers and Programming}
-            The introduction allows the student to obtain a general overview on
-            the roles and responsibilities of both the student and the lecturer
-            as well as an overview on what computer programming is.
-            This section will not be explicitly tested. It is important to note
-            that an understanding of computer architecture and flow diagrams
-            will make the following sections more accessible.
+        The introduction allows the student to obtain a general
+        overview on the roles and responsibilities of both the student
+        and the lecturer as well as an overview on what computer
+        programming is.  This section will not be explicitly
+        tested. It is important to note that an understanding of
+        computer architecture and flow diagrams will make the
+        following sections more accessible.
 
         \subsubsection{Theme 2: Basic Programming}
             \paragraph{Using Python as a Calculator:}
-                The student has to ensure that he/she is comfortable with the
-                \emph{IPython Console} and \emph{Spyder} environments and must
-                be able to use Python to do simple mathematical calculations.
-                It is the student's responsibility to spend enough time using
-                these environments throughout the semester.
+            The student has to ensure that he/she is comfortable with
+            the \emph{IPython Console} and \emph{Spyder} environments
+            and must be able to use Python to do simple mathematical
+            calculations.  It is the student's responsibility to spend
+            enough time using these environments throughout the
+            semester.  The student must to use Python's built-in
+            \texttt{math} module and access the functions stored in
+            it. The student must be able to use Python's built-in help
+            to obain information on the various functions functions.
 
             \paragraph{Names, Objects and Assignment:}
-                The student has to be familiar with the guidelines in the class
-                notes on names and objects e.g. objects are created in memory
-                and a name is assigned to that object. The student must also
-                be familiar with the memory model of Python. The student must
-                also know the difference between the object types e.g. int,
-                float, str, bool.
+            The student has to be familiar with the guidelines in the
+            class notes on names and objects e.g. objects are created
+            in memory and a name is assigned to that object. The
+            student must also be familiar with the memory model of
+            Python. The student must also know the difference between
+            the object types e.g. int, float, str, bool as well as to
+            know how to check the type of an object using
+            \texttt{type()}.
 
             \paragraph{Swapping Objects:}
-                The student must be able to swap 2 objects without destroying
-                the name assignment. The student also has to be familiar with
-                the memory model on how objects or swapped and not over-written.
+            The student must be able to swap 2 objects without
+            destroying the name assignment. The student also has to be
+            familiar with the memory model on how the name assignment
+            to the objects are swapped and not over-written.
 
             \paragraph{Basic List Generation:}
-                The student must be able to generate a simple list objects,
-                both manually and by using the range function. The student also
-                has to be familiar with the various list operators and
-                functions.
+            The student must be able to generate simple list objects,
+            both manually and by using the range function. The student
+            also has to be familiar with the various list operators
+            \texttt{(+,*)}, functions (\texttt{sorted}) and in-place
+            functions (methods)
+            \texttt{append,insert,index,sort,reverse}).  The student
+            must be able to use, read and understand Python's built-in
+            help to obain information on the various functions and
+            in-place functions.
 
         \subsubsection{Theme 3: Control Statements}
             \paragraph{For Loop:}
-                The student has to be able to identify when and why to use
-                for loop/s from a given problem statement. The student has to
-                be familiar with Python's syntax and indentation and be able
-                to implement for loop/s in a program to perform a given task.
+            The student must understand that the \textit{for loop}
+            iterates through iterators (e.g. the elements of a
+            list). The student has to be able to identify when and why
+            to use \textit{for loop(s)} from a given problem
+            statement. The student has to be familiar with Python's
+            syntax and indentation and be able to implement
+            \textit{for loop(s)} in a program to perform a given task.
 
             \paragraph{While Loop:}
-                The student has to be able to identify when and why to use
-                while loop/s from a given problem statement. The student has to
-                be familiar with Python's syntax and indentation and be able
-                to implement while loop/s in a program to perform a given task.
-                The student also has to be able to determine the correct
-                while loop termination conditions in order to perform a given
-                task.
+            The student must understand conditional statements and how
+            to combine them using \texttt{and} and \texttt{or}
+            operators. The while continues to iterate as long as the
+            condition evaluated is \texttt{true} or \texttt{1}. The
+            student must understand that should the condition not
+            update during a \textit{while loop} iteration, the program
+            is stuck in an infinite loop (\texttt{CTRL-C} breaks the
+            program from the loop).  The student has to be able to
+            identify when and why to use while loop/s from a given
+            problem statement. The student has to be familiar with
+            Python's syntax and indentation and be able to implement
+            while loop/s in a program to perform a given task.  The
+            student also has to be able to determine the correct while
+            loop termination conditions in order to perform a given
+            task.
 
             \paragraph{Branching:}
-                The student has to be able to identify the usage of branches
-                (when and why to use an if, elif or else statement) from
-                a problem statement. The student has to be familiar with
-                Python's syntax and indentation and be able to implement
-                branches in a program to perform a given task. The student
-                needs to understand how each of the if, elif and else
-                statements effects the program flow and control. The student
-                also has to be able to determine the correct conditions in
-                order to perform a given task.
+            The student must understand conditional statements and how
+            to combine them using \texttt{and} and \texttt{or}
+            operators. The student has to be able to identify the
+            usage of branches (when and why to use an if, elif or else
+            statement) from a problem statement. The student has to be
+            familiar with Python's syntax and indentation and be able
+            to implement branches in a program to perform a given
+            task. The student needs to understand how each of the if,
+            elif and else statements effects the program flow and
+            control. The student also has to be able to determine the
+            correct conditions in order to perform a given task.
 
         \subsubsection{Theme 4: Iterators (Lists)}
-            The student has to understand the principles of lists as well
-            as the Python syntax thereof. The student must be able to
-            identify and be able to implement lists as well as access and
-            manipulate the objects stored in the lists. The student must
-            be able to rewrite an existing computer program that uses
-            multiply lower level objects such that it uses lists. The student
-            must also be able to identify when and why lists need to be grown
-            and be able to implement this.
+        The student has to understand the principles of lists as well
+        as the Python syntax thereof. The student has to understand
+        that a list is a multi-object container. The student must be
+        able to create and grow lists as well as access and modify
+        elements of a list.  The student must be able to identify and
+        be able to implement lists as well as access and manipulate
+        the objects stored in a list. The student must be able to
+        rewrite an existing computer program that uses multiple single
+        element container objects such that it uses lists. The student
+        must also be able to identify when and why lists need to be
+        grown and be able to implement this.
 
         \subsubsection{Theme 5: Structured Programming (Functions)}
-            The student must be familiar with functions and code structure.
-            The student must be able to properly create and use functions with
-            multiple inputs and outputs. The student must be able to rewrite
-            an existing computer program such that it makes use of functions.
-            The student has to be familiar with local namespace and understand
-            "name scope" within a function, module and script.
+        The student must be familiar with functions and code
+        structure.  The student must be able to properly create and
+        use functions with multiple inputs and outputs. The student
+        must be able to rewrite an existing computer program such that
+        it makes use of functions.  The student has to be familiar
+        with local namespace and understand "name scope" within a
+        function, module and script. The student must understand any
+        object can be be passed into a function or returned from a
+        function. This includes another function and is particularly
+        important for some of the built-in functions.
 
         \subsubsection{Theme 6: Nested Structures}
             The student must be able to evaluate and break down a complex
@@ -278,19 +315,23 @@
             breakdown and be able to implement nested lists.
 
         \subsubsection{Theme 7: Plotting and Graphs}
-            The student must be able to create 2D plots i.e. the student must
-            be familiar with different presentations of data, presenting
-            multiple graphs on the same figure, displaying grids, labelling of
-            the axis, naming of figures, using legends and scaling axis
-            systems. The student must be familiar with creating 3D figures.
-            The student has to be familiar with creating surface and mesh plots.
+        The student must be able to create 2D plots i.e. the student
+        must be familiar with different presentations of data,
+        presenting multiple graphs on the same figure, displaying
+        grids, labelling of the axis, naming of figures, using legends
+        and scaling axis systems. The student must take note of
+        array's which is an object type of the \texttt{numpy} module
+        and understand their associated operators (\texttt{+,-,*,**}).
+        The student must be familiar with creating 3D figures. The
+        student has to be familiar with creating surface and mesh
+        plots.
 
         \subsubsection{Theme 8: Data Handling}
-            The student must be familiar with reading and writing to and from
-            files, as well as the various file types in Python. The student
-            must be able to store the data in a given format. The student must
-            also understand how to access data, stored by Python, in
-            LibreOffice and visa versa.
+        The student must be familiar with reading and writing to and
+        from \texttt{CSV} files.%, as well as the various file types in Python. 
+        The student must be able to store the data in a given
+        format. The student must also understand how to access data,
+        stored by Python, in LibreOffice and visa versa.
 
         \subsubsection{Theme 9: High Level Programming}
                 The student must be able to navigate Python's documentation
