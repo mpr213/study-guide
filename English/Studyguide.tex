@@ -4,10 +4,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                                Packages                                 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \usepackage[a4paper]{geometry}
     \usepackage[utf8x]{inputenc}
     \usepackage{wallpaper}
     \usepackage{setspace}               %needed for line spacing
-    \usepackage[envcountsect]{beamerarticle}
     \usepackage{fancyhdr}
     \usepackage{minted}
     \usepackage{fullpage}
@@ -70,51 +70,8 @@
                            \renewcommand{\headrulewidth}{0pt}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                              Code Highlighting                          %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % IPython Code Snippets
-    \newminted[ipythoncode]{pycon}{linenos=false, %
-        frame=single,                %
-        framesep=0.8em,              %
-        xleftmargin=0.04\linewidth,  %
-        xrightmargin=0.01\linewidth, %
-        label={Code Snippet - IPython Console}}
-
-    % Python Code Snippets
-    \newminted[pysnippet]{python}{linenos=true, %
-        frame=single,                %
-        framesep=0.8em,              %
-        numbersep=6pt,               %
-        xleftmargin=0.05\linewidth,  %
-        xrightmargin=0.02\linewidth, %
-        label={Code Snippet - Python}}
-
-    % Python Console Output
-    \newminted[consoleout]{pycon}{linenos=false, %
-        xleftmargin=0.00\linewidth,  %
-        xrightmargin=0.02\linewidth}
-
-    % Python Program
-    \newminted[pythonprog]{python}{linenos=true, %
-        frame=single,
-        framesep=0.8em,              %
-        numbersep=6pt,               %
-        xleftmargin=0.05\linewidth,  %
-        xrightmargin=0.02\linewidth}
-
-    % Python Program Output
-    \newminted[pyprogout]{pycon}{linenos=false, %
-        xleftmargin=-0.04\linewidth,  %
-        xrightmargin=0.02\linewidth}
-
-    \renewcommand{\theFancyVerbLine}{%
-        \textcolor[rgb]{0.5, 0.5, 1.0}{%
-        \oldstylenums{\arabic{FancyVerbLine}}}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                                   Other                                 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \setjobnamebeamerversion{geometry.beamer}
     \renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h%
                               \do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q%
                               \do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z%
