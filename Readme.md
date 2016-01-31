@@ -1,8 +1,11 @@
-This project contains the English and Afrikaans study guides for MPR213.  
+# Info
+This project contains the English and Afrikaans study guides for MPR213.
 
+# Build
 - To build any of the .pdf files run:
-    - `pdflatex -shell-escape -interaction=nonstopmode filename.tex`  
+    - `pdflatex -shell-escape -interaction=nonstopmode <filename>.tex`
 
+# Dependencies
 - Packages Required:
     - [minted] (http://www.ctan.org/tex-archive/macros/latex/contrib/minted)
     - [paracol] (http://www.ctan.org/tex-archive/macros/latex/contrib/paracol)
