@@ -33,7 +33,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                                Page Style                               %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \graphicspath{{Figures/}{Figures_Lectures/}}
+    \graphicspath{{figures/}}
     \DeclareGraphicsExtensions{.pdf, .png, .jpg, .eps}
     \setcounter{secnumdepth}{3}
     \setcounter{tocdepth}{3}
@@ -87,19 +87,19 @@
     %%%                             Frontmatter                             %%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \pagenumbering{roman}
-        \include{Body/Title}
+        \include{body/title}
         \tableofcontents
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%                               Main Body                             %%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \renewcommand{\thepage}{\arabic{page}}
-        \include{Body/Educational_Approach}
-        \include{Body/Departmental_Studyguide}
-        \include{Body/Lecturer_Contact}
-        \include{Body/Study_Material}
-        \include{Body/Learning_Activity}
-        \include{Body/Assesment_Rules}
-        \include{Body/Study_Components}
-        \include{Body/Group_Project}
+        \include{body/educational_approach}
+        \include{body/departmental_studyguide}
+        \include{body/lecturer_contact}
+        \include{body/study_material}
+        \include{body/learning_activity}
+        \include{body/assesment_rules}
+        \include{body/study_components}
+        \include{body/group_project}
 \end{document}
